@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder Cars</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
+</head>
+
+<body>
+    <nav class="menu">
+        <div class="logo">
+            <h1>Coder Cars</h1>
+        </div>
+
+        <div class="botoes-menu">
+            <a href="/index.html">Início</a>
+            <a href="#">Estoque</a>
+            <a href="#">Contato</a>
+            <a href="/login.html">Login</a>
+            <a href="/adicionar-carro.html">Adicionar Carro</a>
+        </div>
+        <input type="text" placeholder="Qual carro voce procura?" class="barra-pesquisa">
+    </nav>
+    <div class="hero"></div>
+    <div class="secao-container">
+        <div class="login">
+            <h2>Cadastramento de Veículos:</h2>
+            <p></p>
+            <form action="" class="formulario">
+                <p>Marca:</p>
+                <input type="text" name="marca-carro" placeholder="Digite o nome da marca" id="input-marca" class="input">
+
+                <p>Modelo:</p>
+                <input type="text" name="modelo-carro" placeholder="Digite o modelo do carro" id="input-modelo" class="input">
+
+                <p>Cor:</p>
+                <input type="text" name="cor-carro" placeholder="Digite a cor carro" id="input-cor" class="input">
+
+                <p>Ano:</p>
+                <input type="text" name="ano-carro" placeholder="Digite o ano do modelo" id="input-ano" class="input">
+
+                <p>Quilometragem:</p>
+                <input type="text" name="km-carro" placeholder="Digite a quilometragem do veículo" id="input-km" class="input">
+
+                <p>Preço de venda:</p>
+                <input type="text" name="valor-carro" placeholder="Digite o valor de venda do veículo" id="input-valor" class="input">
+
+                <p>Upload fotos do veículo:</p>
+                <input type="file" name="upload-fotos" placeholder="" id="input-fotos" class="input-fotos">
+                
+            </form>
+            <button class="botao" id="botao-cadastrar-carro">Cadastrar Veículo</button>
+            <a href="#">Esqueceu a senha?</a>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Coder Cars - Lucas Moura</p>
+    </footer>
+
+    <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

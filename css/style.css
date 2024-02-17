@@ -1,0 +1,231 @@
+.menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    justify-content: space-around;
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    background-color: #2b2d42;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #f2f2f2;
+}
+
+.barra-pesquisa {
+    width: 200px;
+    height: 28px;
+    border-radius: 8px;
+}
+
+input {
+    padding-left: 16px;
+}
+
+.botoes-menu {
+    display: flex;
+}
+
+.botoes-menu a {
+    color: #f2f2f2;
+    font-size: 1.6rem;
+    padding-left: 24px;
+}
+
+.botoes-menu a:hover {
+    font-weight: bold;
+    /* text-decoration: underline; */
+    transition: 0.3s;
+}
+
+/* .hero {
+    width: 100%;
+    height: 400px;
+    background-image: url(../images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 55%;
+    background-position-y: 55%;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 60px;
+}
+
+.secao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 60px;
+}
+
+.titulo {
+    font-size: 2.4rem;
+    margin: 0 auto;
+}
+
+.carros {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 24px;
+}
+
+.carro {
+    width: 460px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: bottom;
+    text-align: justify;
+    background-image:  url(../images/mercedes-cla45amg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    
+}
+
+.carro:hover {
+    box-shadow: inset 0 0 0 10000px rgba(23, 23, 24, 0.418);
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.dados-carro {
+    z-index: 1;
+    padding: 24px;
+}
+
+.nome-carro {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.info-carro {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #f2f2f2;
+    padding-bottom: 4px;
+}
+
+.preco-carro {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: rgba(255, 255, 0, 0.904);
+    display: flex;
+    
+}
+
+.cifrao{
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 4px;
+}
+
+.zeros {
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+
+.botao {
+    background-color: #ef233c;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.botao:hover {
+    color: #edf2f4;
+    background-color: #2b2d42;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-color: #2b2d42;
+    height: 80px;
+    justify-content: center;
+    /* position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+}
+
+footer p {
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* CSS PAGINA LOGIN */
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login h2 {
+    font-size: 2.4rem;
+    padding-bottom: 8px;
+}
+
+.login p {
+    font-size: 1.6rem;
+}
+
+.login ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.login li {
+    font-size: 1.8rem;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin-bottom: 12px;
+    height: 32px;
+    border-radius: 8px;
+    border: solid 1px #d3d3d3 ;
+} 
+
+
+.formulario a {
+    padding-top: 8px;
+}
+
+.formulario p {
+    padding-bottom: 8px;
+}
+
+.input-fotos {
+    padding-bottom: 16px;
+}

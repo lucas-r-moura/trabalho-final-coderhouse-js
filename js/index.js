@@ -11,21 +11,59 @@ import {Usuario} from './classes/Usuario.js'
 let carros = []; // Array para armazenar objetos de carros
 let usuarios = [];// Array para armazenar objetos de usuarios
 
+// Botão para adicionar carros
+const botaoCadastrarCarro = document.querySelector('#botao-cadastrar-carro')
+
+if (botaoCadastrarCarro != null ) {
+    botaoCadastrarCarro.onclick = adicionarCarro
+ }
+
 
 function adicionarCarro() {
-    let marca = prompt("Digite a marca do carro:");
-    let modelo = prompt("Digite o modelo do carro:");
-    let valor = parseFloat(prompt("Digite o valor do carro:"));
-    let ano = parseFloat(prompt("Digite o ano do carro:"));
+    let marca = document.getElementById('input-marca').value;
+    let modelo = document.getElementById('input-modelo').value;
+    let cor = document.getElementById('input-cor').value;
+    let valor = parseFloat(document.getElementById('input-valor').value);
+    let ano = parseFloat(document.getElementById('input-ano').value);
+    let quilometragem = parseFloat(document.getElementById('input-km').value);
 
     // Criar um objeto carro a partir da classe
-    let carro = new Carro (marca, modelo, valor, ano)
+    let carro = new Carro (marca, modelo, cor, valor, ano, quilometragem)
 
     // Adicionar o objeto ao array
     carros.push(carro);
 
     alert("Carro adicionado com sucesso!");
+
+    console.log(carros)
+
+    // Limpas os inputs
+    document.getElementById('input-marca').value = ""
+    document.getElementById('input-modelo').value = ""
+    document.getElementById('input-cor').value = ""
+    document.getElementById('input-valor').value = ""
+    document.getElementById('input-ano').value = ""
+    document.getElementById('input-km').value = ""
 }
+
+
+
+// function adicionarCarroVitrine () {
+//     let novoCarro = carros[carros.length - 1]
+//     const vitrineCarros = document.querySelector('#vitrine')
+//     let carroCard = document.querySelector('.carro')
+//     vitrineCarros.innerHTML += carroCard
+    
+// }
+
+// const nomeCarroCard = document.querySelector('.nome-carro').innerText
+// console.log(nomeCarroCard)
+
+// const vitrineCarros = document.querySelector('#vitrine')
+// let carroCard = document.querySelector('#card-carro').innerHTML
+// let novoCarroCard = vitrineCarros.innerHTML += carroCard
+// console.log(novoCarroCard)
+
 
 
 function mostrarCarros() {
@@ -61,28 +99,3 @@ function mostrarUsuarios(){
     });
 }
 
-// Loop para exibir o menu até que o usuário escolha sair
-while (true) {
-    let opcao = prompt("Escolha uma opção:\n1. Adicionar carro\n2. Mostrar carros\n3. Cadastrar usuario\n4. Mostrar usuarios\n5. Sair");
-
-    switch (opcao) {
-        case "1":
-            adicionarCarro();
-            break;
-        case "2":
-            mostrarCarros();
-            break;
-        case "3":
-            adicionarUsuario();
-            break;
-        case "4":
-            mostrarUsuarios();
-            break;
-        case "5":
-            console.log("Saindo do programa. Até logo!");
-            process.exit(1); // Encerrar o programa
-        default:
-            console.log("Opção inválida. Tente novamente.");
-            
-    }
-}
