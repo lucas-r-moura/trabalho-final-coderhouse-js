@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .menu {
     display: flex;
     align-items: center;
@@ -36,7 +41,6 @@ input {
 
 .botoes-menu a:hover {
     font-weight: bold;
-    /* text-decoration: underline; */
     transition: 0.3s;
 }
 
@@ -55,8 +59,13 @@ input {
     flex-direction: column;
     padding-top: 24px;
     padding-bottom: 60px;
+    
+
 }
 
+body .container {
+    flex: 1 1 0;
+}
 .secao-container {
     display: flex;
     flex-direction: column;
@@ -74,6 +83,8 @@ input {
     display: flex;
     justify-content: space-evenly;
     padding-top: 24px;
+    flex-wrap: wrap;
+    row-gap: 24px;
 }
 
 .carro {
@@ -89,7 +100,7 @@ input {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
+    
     
 }
 
@@ -164,10 +175,6 @@ footer {
     background-color: #2b2d42;
     height: 80px;
     justify-content: center;
-    /* position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0; */
 }
 
 footer p {

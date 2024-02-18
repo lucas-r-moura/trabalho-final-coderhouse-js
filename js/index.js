@@ -1,9 +1,3 @@
-// Alterações solicitadas pelo professor:
-
-// criar um novo repo com projeto novo com index.htmll e index.js
-// criar uma pasta chamada classes - Carro.js e Usuario.js
-// usar parseFLoat nos valores 
-
 
 import {Carro} from './classes/Carro.js'
 import {Usuario} from './classes/Usuario.js'
@@ -19,19 +13,30 @@ if (botaoCadastrarCarro != null ) {
  }
 
 
+// CARRROS:
+
+// A FAZER:
+// Adiconar um while e if para verificar se todos os campos foram preenchidos corretamente
+
 function adicionarCarro() {
-    let marca = document.getElementById('input-marca').value;
-    let modelo = document.getElementById('input-modelo').value;
-    let cor = document.getElementById('input-cor').value;
+    let marca = document.getElementById('input-marca').value.toUpperCase();
+    let modelo = document.getElementById('input-modelo').value.toUpperCase();
+    let cor = document.getElementById('input-cor').value.toUpperCase();
     let valor = parseFloat(document.getElementById('input-valor').value);
     let ano = parseFloat(document.getElementById('input-ano').value);
     let quilometragem = parseFloat(document.getElementById('input-km').value);
+    let foto = document.getElementById('input-fotos').value // tentativa de captar a imagem - rever 
 
     // Criar um objeto carro a partir da classe
-    let carro = new Carro (marca, modelo, cor, valor, ano, quilometragem)
+    let carro = new Carro (marca, modelo, cor, valor, ano, quilometragem, foto)
 
     // Adicionar o objeto ao array
     carros.push(carro);
+
+    // Adicionar carro no localStorage
+    let carrosStorage = JSON.parse(localStorage.getItem("carros")) 	|| []
+    carrosStorage.push(carro)
+    localStorage.setItem("carros", JSON.stringify(carrosStorage))
 
     alert("Carro adicionado com sucesso!");
 
@@ -46,34 +51,41 @@ function adicionarCarro() {
     document.getElementById('input-km').value = ""
 }
 
-
-
-// function adicionarCarroVitrine () {
-//     let novoCarro = carros[carros.length - 1]
-//     const vitrineCarros = document.querySelector('#vitrine')
-//     let carroCard = document.querySelector('.carro')
-//     vitrineCarros.innerHTML += carroCard
-    
-// }
-
-// const nomeCarroCard = document.querySelector('.nome-carro').innerText
-// console.log(nomeCarroCard)
-
-// const vitrineCarros = document.querySelector('#vitrine')
-// let carroCard = document.querySelector('#card-carro').innerHTML
-// let novoCarroCard = vitrineCarros.innerHTML += carroCard
-// console.log(novoCarroCard)
-
-
-
 function mostrarCarros() {
-    alert("Lista de carros:");
+    let carros = JSON.parse(localStorage.getItem("carros"))
+    let listaCarros = document.getElementById("vitrine")
+    
+    // listaCarros.innerHTML = ""
+    for (let i = 0; i < carros.length; i++) {
+        let novoCarro = `<div class="carro" id="carro${i}">
+                            <div class="dados-carro">
+                                <h3 class="nome-carro">
+                                    ${carros[i].marca} - ${carros[i].modelo}
+                                </h3>
+                                <P class="info-carro">
+                                    ${carros[i].cor} - ${carros[i].ano}
+                                </P>
+                                <p class="preco-carro">
+                                    <span class="cifrao">R$</span> ${carros[i].valor.toLocaleString('pt-BR')},<span class="zeros">00</span>
+                                </p>
+                            </div>
+                         </div>`
 
-    //Percorrer o array e mostrar as informações de cada usuario
-    carros.forEach((carro, index) => {
-        alert(`Carro ${index + 1}:\nMarca: ${carro.marca}\nModelo: ${carro.modelo}\nValor: ${carro.valor}\nAno: ${carro.ano}\n--------------`);
-    });
+        listaCarros.innerHTML += novoCarro
+        
+    }   
 }
+
+// monstrar carros na vitrine
+mostrarCarros()
+
+
+// USUÁRIOS:
+
+// A FAZER:
+// CRIAR LOCALSTORAGE DO USUARIO CRIADO 
+// COLOCAR A PAGINA "ADICIONAR CARRO" APENAS PARA USUARIO LOGADO
+// ADCIONAR ICONE DE PERFIL E PAGINA CONTA DO USUARIO 
 
 
 function adicionarUsuario(){
@@ -99,3 +111,9 @@ function mostrarUsuarios(){
     });
 }
 
+
+// PESQUISAR CARRO
+
+// A FAZER:
+// ADICIONAR FUNÇÃO DE PESQUISAR CARRO 
+// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUISA
