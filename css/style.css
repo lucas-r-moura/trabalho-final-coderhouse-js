@@ -53,14 +53,19 @@ input {
     background-position-y: 55%;
     background-position-y: 55%;
 } */
+.centro-h {
+    align-items: center;
+}
+
+.centro-v {
+    justify-content: center;
+}
 
 .container {
     display: flex;
     flex-direction: column;
     padding-top: 24px;
-    padding-bottom: 60px;
-    
-
+    padding-bottom: 60px;   
 }
 
 body .container {
@@ -185,28 +190,30 @@ footer p {
 
 /* CSS PAGINA LOGIN */
 
-.login {
+.conteudo-inputs {
     display: flex;
     flex-direction: column;
+    min-width: 300px;
+    max-width: 500px;
 }
 
-.login h2 {
+.conteudo-inputs h2 {
     font-size: 2.4rem;
     padding-bottom: 8px;
 }
 
-.login p {
+.conteudo-inputs p {
     font-size: 1.6rem;
 }
 
-.login ul {
+.conteudo-inputs ul {
     display: flex;
     justify-content: space-around;
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
-.login li {
+.conteudo-inputs li {
     font-size: 1.8rem;
     list-style-type: none;
     text-decoration: none;
@@ -229,8 +236,9 @@ footer p {
     padding-top: 8px;
 }
 
-.formulario p {
+.formulario label {
     padding-bottom: 8px;
+    font-size: 1.6rem;
 }
 
 .input-fotos {

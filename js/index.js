@@ -10,7 +10,7 @@ const botaoCadastrarCarro = document.querySelector('#botao-cadastrar-carro')
 
 if (botaoCadastrarCarro != null ) {
     botaoCadastrarCarro.onclick = adicionarCarro
- }
+}
 
 
 // CARRROS:
@@ -40,7 +40,7 @@ function adicionarCarro() {
 
     alert("Carro adicionado com sucesso!");
 
-    console.log(carros)
+    console.log(carrosStorage[0].marca)
 
     // Limpas os inputs
     document.getElementById('input-marca').value = ""
@@ -49,13 +49,14 @@ function adicionarCarro() {
     document.getElementById('input-valor').value = ""
     document.getElementById('input-ano').value = ""
     document.getElementById('input-km').value = ""
+
+    
 }
 
 function mostrarCarros() {
     let carros = JSON.parse(localStorage.getItem("carros"))
     let listaCarros = document.getElementById("vitrine")
     
-    // listaCarros.innerHTML = ""
     for (let i = 0; i < carros.length; i++) {
         let novoCarro = `<div class="carro" id="carro${i}">
                             <div class="dados-carro">
@@ -77,7 +78,7 @@ function mostrarCarros() {
 }
 
 // monstrar carros na vitrine
-mostrarCarros()
+// mostrarCarros()
 
 
 // USUÁRIOS:
@@ -87,33 +88,48 @@ mostrarCarros()
 // COLOCAR A PAGINA "ADICIONAR CARRO" APENAS PARA USUARIO LOGADO
 // ADCIONAR ICONE DE PERFIL E PAGINA CONTA DO USUARIO 
 
+// Botão para adicionar usuarios
+const botaoCadastrarUsuario = document.querySelector('#botao-cadastrar-usuario')
+
+if (botaoCadastrarUsuario != null ) {
+    botaoCadastrarUsuario.onclick = adicionarUsuario
+ }
+
+
 
 function adicionarUsuario(){
-    let nome = prompt("Digite o nome:");
-    let email = prompt("Digite o email")
-    let celular = parseInt(prompt("Digite o celular"))
+    let nome = document.getElementById('input-cadastro-nome').value.toUpperCase()
+    let email = document.getElementById('input-cadastro-email').value
+    let celular = document.getElementById('input-cadastro-celular').value
+    let senha = document.getElementById('input-cadastro-senha').value
 
     //Criar um objeto usuario a partir da classe
-    let usuario = new Usuario (nome, email, celular)
+    let usuario = new Usuario (nome, email, celular, senha)
 
     //Adicionar o objeto ao array
     usuarios.push(usuario)
+    console.log(usuarios)
+
+    // Adicionar usuario no localStorage
+    let usuariosStorage = JSON.parse(localStorage.getItem("usuarios")) 	|| []
+    usuariosStorage.push(usuario)
+    localStorage.setItem("usuarios", JSON.stringify(usuariosStorage))
 
     alert("Usuario adicionado com sucesso")
 }
 
-function mostrarUsuarios(){
-    alert("Lista de usuarios");
+// function mostrarUsuarios(){
+//     alert("Lista de usuarios");
 
-    //Percorrer o array e mostrar as informações de cada usuario
-    usuarios.forEach((usuario, index) => {
-        alert(`Usuario ${index + 1}:\nNome: ${usuario.nome}\nEmail: ${usuario.email}\nCelular: ${usuario.celular}\n------------`)
-    });
-}
+//     //Percorrer o array e mostrar as informações de cada usuario
+//     usuarios.forEach((usuario, index) => {
+//         alert(`Usuario ${index + 1}:\nNome: ${usuario.nome}\nEmail: ${usuario.email}\nCelular: ${usuario.celular}\n------------`)
+//     });
+// }
 
 
 // PESQUISAR CARRO
 
 // A FAZER:
 // ADICIONAR FUNÇÃO DE PESQUISAR CARRO 
-// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUISA
+// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUIS

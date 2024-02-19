@@ -27,20 +27,30 @@
     <div class="hero"></div>
     <div class="container centro-h centro-v">
         <div class="conteudo-inputs">
-            <h2>Faça o login na sua conta</h2>
-            <p>Acesse com seu email e senha.</p>
+            <h2>Cadastramento de contas</h2>
+            <p>Novo na Coder Cars? Então crie uma nova conta:</p>
             <ul>
                 <li><a href="/login.html">Login</a></li>
                 <li><a href="/cadastro.html">Criar conta</a></li>
             </ul>
                 <form action="" class="formulario">
-                    <input type="email" name="email" placeholder="Digite seu email" id="input-email" class="input">
 
-                    <input type="password" name="senha" placeholder="Digite sua senha" id="input-senha" class="input">
+                    <label>Nome:</label>
+                    <input type="text" name="nome-usuario" placeholder="Digite o seu nome" id="input-cadastro-nome" class="input">
 
-                    <input type="button" name="enviar" value="Acessar conta" id="submit" class="botao" onclick="acessarConta()">
-                    <a href="#">Esqueceu a senha?</a>
+                    <label>Email:</label>
+                    <input type="email" name="email-usuario" placeholder="Digite o seu email" id="input-cadastro-email" class="input">
+
+                    <label>Celular:</label>
+                    <input type="tel" name="celular-usuario" placeholder="Digite o seu numero de celular" id="input-cadastro-celular" class="input">
+
+                    <label>Senha:</label>
+                    <input type="password" name="senha-usuario" placeholder="Digite a sua senha" id="input-cadastro-senha" class="input">
+
+                    
                 </form>
+                <button class="botao" id="botao-cadastrar-usuario">Cadastrar conta</button>
+                <a href="#">Esqueceu a senha?</a>
         </div>
     </div>
     </div>
