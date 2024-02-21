@@ -1,4 +1,14 @@
 
+// 2ª ENTREGA DO PROJETO:
+
+// IMPLEMENTADO:
+// - Trocado os prompts por inputs de formulário
+// - Cadastramento de carros utilizando LocalStorage 
+// - Adição dos carros cadastrados na pagina principal atraves de manipulação de DOM 
+// - Limpeza dos inputs apos finalizar casdastramento 
+// - Cadastramento de novos usuários utilizando LocalStorage
+
+
 import {Carro} from './classes/Carro.js'
 import {Usuario} from './classes/Usuario.js'
 
@@ -17,6 +27,8 @@ if (botaoCadastrarCarro != null ) {
 
 // A FAZER:
 // Adiconar um while e if para verificar se todos os campos foram preenchidos corretamente
+// Criar uma função para remover carro vendido
+// Adicionar a função de alterar imagem do carro localmente
 
 function adicionarCarro() {
     let marca = document.getElementById('input-marca').value.toUpperCase();
@@ -40,8 +52,6 @@ function adicionarCarro() {
 
     alert("Carro adicionado com sucesso!");
 
-    console.log(carrosStorage[0].marca)
-
     // Limpas os inputs
     document.getElementById('input-marca').value = ""
     document.getElementById('input-modelo').value = ""
@@ -49,7 +59,6 @@ function adicionarCarro() {
     document.getElementById('input-valor').value = ""
     document.getElementById('input-ano').value = ""
     document.getElementById('input-km').value = ""
-
     
 }
 
@@ -57,6 +66,9 @@ function mostrarCarros() {
     let carros = JSON.parse(localStorage.getItem("carros"))
     let listaCarros = document.getElementById("vitrine")
     
+    // Conferencia se está na página da vitrine
+    if(!listaCarros) return
+
     for (let i = 0; i < carros.length; i++) {
         let novoCarro = `<div class="carro" id="carro${i}">
                             <div class="dados-carro">
@@ -78,15 +90,15 @@ function mostrarCarros() {
 }
 
 // monstrar carros na vitrine
-// mostrarCarros()
+mostrarCarros()
 
 
 // USUÁRIOS:
 
 // A FAZER:
-// CRIAR LOCALSTORAGE DO USUARIO CRIADO 
 // COLOCAR A PAGINA "ADICIONAR CARRO" APENAS PARA USUARIO LOGADO
 // ADCIONAR ICONE DE PERFIL E PAGINA CONTA DO USUARIO 
+// CRIAR UM FILTRO DE COMPARAÇÃO SE JÁ EXISTE O EMAIL CADASTRADO NO BANCO DE DADOS
 
 // Botão para adicionar usuarios
 const botaoCadastrarUsuario = document.querySelector('#botao-cadastrar-usuario')
@@ -94,8 +106,6 @@ const botaoCadastrarUsuario = document.querySelector('#botao-cadastrar-usuario')
 if (botaoCadastrarUsuario != null ) {
     botaoCadastrarUsuario.onclick = adicionarUsuario
  }
-
-
 
 function adicionarUsuario(){
     let nome = document.getElementById('input-cadastro-nome').value.toUpperCase()
@@ -106,30 +116,22 @@ function adicionarUsuario(){
     //Criar um objeto usuario a partir da classe
     let usuario = new Usuario (nome, email, celular, senha)
 
+    
     //Adicionar o objeto ao array
     usuarios.push(usuario)
-    console.log(usuarios)
 
     // Adicionar usuario no localStorage
     let usuariosStorage = JSON.parse(localStorage.getItem("usuarios")) 	|| []
     usuariosStorage.push(usuario)
     localStorage.setItem("usuarios", JSON.stringify(usuariosStorage))
 
+
     alert("Usuario adicionado com sucesso")
 }
-
-// function mostrarUsuarios(){
-//     alert("Lista de usuarios");
-
-//     //Percorrer o array e mostrar as informações de cada usuario
-//     usuarios.forEach((usuario, index) => {
-//         alert(`Usuario ${index + 1}:\nNome: ${usuario.nome}\nEmail: ${usuario.email}\nCelular: ${usuario.celular}\n------------`)
-//     });
-// }
 
 
 // PESQUISAR CARRO
 
 // A FAZER:
 // ADICIONAR FUNÇÃO DE PESQUISAR CARRO 
-// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUIS
+// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUISA
