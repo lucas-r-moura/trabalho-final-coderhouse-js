@@ -3,7 +3,7 @@
 
 // IMPLEMENTADO:
 // - Separado as Classes em novos arquivos .JS
-// - Trocado os prompts por inputs de formulário
+// - Aletração dos prompts por inputs de formulário
 // - Cadastramento de carros utilizando LocalStorage 
 // - Adição dos carros cadastrados na pagina principal atraves de manipulação de DOM 
 // - Limpeza dos inputs apos finalizar casdastramento 
