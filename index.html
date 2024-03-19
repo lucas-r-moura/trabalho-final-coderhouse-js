@@ -7,6 +7,7 @@
     <title>Coder Cars</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
+    <script src="https://kit.fontawesome.com/e3350b82d6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,29 +20,61 @@
             <a href="/index.html">Início</a>
             <a href="#">Estoque</a>
             <a href="#">Contato</a>
-            <a href="/login.html">Login</a>
-            <a href="/adicionar-carro.html">Adicionar Carro</a>
+            <a href="/login.html" id="menu-login">Login</a>
+            <a href="/adicionar-carro.html" id="adicionar-carro">Adicionar Carro</a>
         </div>
-        <input type="text" placeholder="Qual carro voce procura?" class="barra-pesquisa">
+        <div class="menu-lateral" id="menu-lateral">
+            <span id="saudacao"></span>
+            <span id="profile" class="profile"><i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i></span>
+            <button id="btn-sair" class="btn-sair">Sair</button>
+        </div>
     </nav>
     <div class="hero"></div>
     <div class="container">
         <h2 class="titulo">Vitrine Coder Cars:</h2>
         <div class="carros" id="vitrine">
 
-            <div class="carro" id="carro">
-                    <div class="dados-carro">
-                        <h3 class="nome-carro">
-                            MERCEDES-BENZ - CLA 45 AMG
-                        </h3>
-                        <P class="info-carro">
-                            VERMELHO PATAGONIA - 2022/2023
-                        </P>
-                        <p class="preco-carro">
-                            <span class="cifrao">R$</span> 539.000,<span class="zeros">00</span>
-                        </p>
-                    </div>
+            <div class="carro mercedes" id="carro">
+                <div class="dados-carro">
+                    <h3 class="nome-carro">
+                        MERCEDES-BENZ - CLA 45 AMG
+                    </h3>
+                    <P class="info-carro">
+                        VERMELHO PATAGONIA - 2022/2023
+                    </P>
+                    <p class="preco-carro">
+                        <span class="cifrao">R$</span> 539.000,<span class="zeros">00</span>
+                    </p>
                 </div>
+            </div>
+
+            <div class="carro bmw" id="carro">
+                <div class="dados-carro">
+                    <h3 class="nome-carro">
+                        BMW - X4 XDRIVE 28I
+                    </h3>
+                    <P class="info-carro">
+                        BRANCO PEROLA - 2015
+                    </P>
+                    <p class="preco-carro">
+                        <span class="cifrao">R$</span> 169.900,<span class="zeros">00</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="carro evoke" id="carro">
+                <div class="dados-carro">
+                    <h3 class="nome-carro">
+                        RANGE ROVER - EVOKE DYNAMIC
+                    </h3>
+                    <P class="info-carro">
+                        VERMELHO - 2018
+                    </P>
+                    <p class="preco-carro">
+                        <span class="cifrao">R$</span> 253.500,<span class="zeros">00</span>
+                    </p>
+                </div>
+            </div>
 
         </div>
     </div>

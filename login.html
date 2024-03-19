@@ -7,6 +7,7 @@
     <title>Coder Cars</title>
     <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
+    <script src="https://kit.fontawesome.com/e3350b82d6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,10 +20,14 @@
             <a href="/index.html">Início</a>
             <a href="#">Estoque</a>
             <a href="#">Contato</a>
-            <a href="/login.html">Login</a>
-            <a href="/adicionar-carro.html">Adicionar Carro</a>
+            <a href="/login.html" id="menu-login">Login</a>
+            <a href="/adicionar-carro.html" id="adicionar-carro">Adicionar Carro</a>
         </div>
-        <input type="text" placeholder="Qual carro voce procura?" class="barra-pesquisa">
+        <div class="menu-lateral" id="menu-lateral">
+            <span id="saudacao"></span>
+            <span id="profile" class="profile"><i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i></span>
+            <button id="btn-sair" class="btn-sair">Sair</button>
+        </div> 
     </nav>
     <div class="hero"></div>
     <div class="container centro-h centro-v">
@@ -38,7 +43,7 @@
 
                     <input type="password" name="senha" placeholder="Digite sua senha" id="input-senha" class="input">
 
-                    <input type="button" name="enviar" value="Acessar conta" id="submit" class="botao" onclick="acessarConta()">
+                    <input type="button" name="enviar" value="Acessar conta" id="submit" class="botao">
                     <a href="#">Esqueceu a senha?</a>
                 </form>
         </div>

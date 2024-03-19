@@ -14,6 +14,10 @@ body {
     background-color: #2b2d42;
 }
 
+#adicionar-carro {
+    display: none;
+}
+
 .logo {
     font-size: 1.8rem;
     color: #f2f2f2;
@@ -42,6 +46,28 @@ input {
 .botoes-menu a:hover {
     font-weight: bold;
     transition: 0.3s;
+}
+
+.menu-lateral{
+    visibility: hidden;
+    display: flex;
+    color: #f2f2f2;
+    align-items: center;
+    font-size: 12px;
+    gap: 16px;
+}
+
+.btn-sair {
+    background-color: #2b2d42;
+    color: #f2f2f2;
+    font-size: 12px;
+    border: none;
+}
+
+.btn-sair:hover {
+    font-weight: bold;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 /* .hero {
@@ -100,7 +126,7 @@ body .container {
     justify-content: flex-end;
     align-items: bottom;
     text-align: justify;
-    background-image:  url(../images/mercedes-cla45amg);
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -109,10 +135,21 @@ body .container {
     
 }
 
+.mercedes {
+    background-image:  url(../images/mercedes-cla45amg);
+}
+
+.bmw {
+    background-image:  url(../images/x4.jpg);
+}
+
 .carro:hover {
     box-shadow: inset 0 0 0 10000px rgba(23, 23, 24, 0.418);
     transition: 500ms ease-in-out;
-    cursor: pointer;
+}
+
+.evoke {
+    background-image:  url(../images/evoque.jpg);
 }
 
 .dados-carro {
