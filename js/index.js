@@ -40,9 +40,6 @@ if (botaoCadastrarCarro != null) {
 // Criar uma função para remover carro vendido
 // Adicionar a função de alterar imagem do carro localmente
 
-// ESTOQUE INICI
-
-
 
 function adicionarCarro() {
     let marca = document.getElementById('input-marca').value.toUpperCase();
