@@ -237,16 +237,17 @@ footer p {
 .conteudo-inputs h2 {
     font-size: 2.4rem;
     padding-bottom: 8px;
+    text-align: center;
 }
 
 .conteudo-inputs p {
     font-size: 1.6rem;
+    padding-bottom: 24px;
 }
 
 .conteudo-inputs ul {
     display: flex;
     justify-content: space-around;
-    padding-top: 24px;
     padding-bottom: 24px;
 }
 
@@ -280,4 +281,16 @@ footer p {
 
 .input-fotos {
     padding-bottom: 16px;
+}
+
+
+/* Pagina de contato */
+
+.textarea {
+    resize: none;
+    margin-bottom: 12px;
+    height: 96px;
+    border-radius: 8px;
+    border: solid 1px #d3d3d3 ;
+    padding: 12px;
 }

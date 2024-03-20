@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <script src="https://kit.fontawesome.com/e3350b82d6.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -28,37 +27,29 @@
             <span id="saudacao"></span>
             <span id="profile" class="profile"><i class="fa-regular fa-user fa-2xl" style="color: #ffffff;"></i></span>
             <button id="btn-sair" class="btn-sair">Sair</button>
-        </div> 
+        </div>
     </nav>
     <div class="hero"></div>
     <div class="container centro-h centro-v">
         <div class="conteudo-inputs">
-            <h2>Cadastramento de contas</h2>
-            <p>Novo na Coder Cars? Então crie uma nova conta:</p>
-            <ul>
-                <li><a href="/login.html">Login</a></li>
-                <li><a href="/cadastro.html">Criar conta</a></li>
-            </ul>
-                <form action="" class="formulario">
+            <h2>Fale com a Coder Cars:</h2>
+            <p>Preencha os campos abaixo que em breve entraremos em contato:</p>
+            <form action="" class="formulario">
+                <label>Nome:</label>
+                <input type="text" name="contato-nome" placeholder="Digite o seu nome" class="input">
 
-                    <label>Nome:</label>
-                    <input type="text" name="nome-usuario" placeholder="Digite o seu nome" id="input-cadastro-nome" class="input">
+                <label>Email:</label>
+                <input type="email" name="contato-email" placeholder="Digite o seu email" class="input">
 
-                    <label>Email:</label>
-                    <input type="email" name="email-usuario" placeholder="Digite o seu email" id="input-cadastro-email" class="input">
+                <label>Celular:</label>
+                <input type="tel" name="contato-celular" placeholder="Digite o seu numero de celular" class="input">
 
-                    <label>Celular:</label>
-                    <input type="tel" name="celular-usuario" placeholder="Digite o seu numero de celular" id="input-cadastro-celular" class="input">
+                <label>Escreva a sua mensagem:</label>
+                <textarea name="message" id="message" required="" class="input textarea" rows="5" cols="30"></textarea>
 
-                    <label>Senha:</label>
-                    <input type="password" name="senha-usuario" placeholder="Digite a sua senha" id="input-cadastro-senha" class="input">
-
-                    
-                </form>
-                <button class="botao" id="botao-cadastrar-usuario">Cadastrar conta</button>
-                
+            </form>
+            <button class="botao" id="botao-fale-conosco">Enviar</button>
         </div>
-    </div>
     </div>
     <footer>
         <p>&copy; <span id="anoAtual"></span> Coder Cars - Lucas Moura</p>

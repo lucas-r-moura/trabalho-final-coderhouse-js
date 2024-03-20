@@ -15,14 +15,19 @@
 // IMPLEMENTADO:
 // - login de usuario conferindo email no "banco de dados"(local storage)
 // - Icone de perfil e nome do usuario depois de logado 
+// - Correção de bug pagina inicial
+// - Retirado "esqueceu senha dos botões"
+// - Removido pagina de login enquanto logado.
+// - adicionado novos carros na vitrine
+// - adicionado funcção de data no rodapé
 
 
 import { Carro } from './classes/Carro.js'
 import { Usuario } from './classes/Usuario.js'
 
+
 let carros = []; // Array para armazenar objetos de carros
 let usuarios = [];// Array para armazenar objetos de usuarios
-
 
 
 // Botão para adicionar carros
@@ -39,6 +44,20 @@ if (botaoCadastrarCarro != null) {
 // Adiconar um while e if para verificar se todos os campos foram preenchidos corretamente
 // Criar uma função para remover carro vendido
 // Adicionar a função de alterar imagem do carro localmente
+
+// ESTOQUE INICIAL
+// let carrosStorage = JSON.parse(localStorage.getItem("carros")) || []
+
+// let mercedes = new Carro ('MERCEDES-BENZ', 'npm install sweetalert2CLA 45 AMG', "VERMELHO PATAGONIA", '539.000', 2023, 2000)
+// carrosStorage.push(mercedes)
+
+// let bmw = new Carro ('BMW', 'X4 XDRIVE 28I', "BRANCO PEROLA", '169.900', 2015, 3000)
+// carrosStorage.push(bmw)
+
+// let rangeRover = new Carro ('RANGE ROVER', 'EVOKE DYNAMIC', "VERMELHO", '253.500', 2018, 3000)
+// carrosStorage.push(rangeRover)
+// localStorage.setItem("carros", JSON.stringify(carrosStorage))
+
 
 
 function adicionarCarro() {
@@ -79,8 +98,9 @@ function mostrarCarros() {
 
     // Conferencia se está na página da vitrine
     // if (window.location.href != './index.html') return
-    if (!listaCarros && !carros) return
-    console.log(carros)
+
+    if (!listaCarros || !carros) return
+
     for (let i = 0; i < carros.length; i++) {
         let novoCarro = `<div class="carro" id="carro${i}">
                             <div class="dados-carro">
@@ -125,27 +145,24 @@ function adicionarUsuario() {
     //Criar um objeto usuario a partir da classe
     let usuario = new Usuario(nome, email, celular, senha)
 
-
+    
     //Adicionar o objeto ao array
     usuarios.push(usuario)
 
     // Adicionar usuario no localStorage
-    let usuariosStorage = JSON.parse(localStorage.getItem("usuarios")) || []
+    let usuariosStorage = JSON.parse(localStorage.getItem("usuarios")) || []    
+
+    
     usuariosStorage.push(usuario)
     localStorage.setItem("usuarios", JSON.stringify(usuariosStorage))
 
-
-    alert("Usuario adicionado com sucesso")
+    alert("Usuario adicionado com sucesso!")
 
     window.location.href = './login.html'
-
-
 }
 
 
 // LOGIN
-// TERMINAR DE COLCOAR O PROFILE EM TODAS AS PAGINAS
-// TERMINAR A CONDICIONAL ELSE 
 
 let botaoAcessarConta = document.getElementById('submit')
 
@@ -222,8 +239,20 @@ function deslogar() {
 
 
 
-// PESQUISAR CARRO
+// PAGINA CONTATO 
 
-// A FAZER:
-// ADICIONAR FUNÇÃO DE PESQUISAR CARRO
-// EXIBIR PAGINA APENAS COM OS CARROS DISPONIVEIS NA PESQUISA
+// Botão para enviar mensagem da pagina de contato
+const botaoFaleConosco = document.getElementById('botao-fale-conosco')
+
+if (botaoFaleConosco != null) {
+    botaoFaleConosco.onclick = () => alert('Mensagem enviada com sucesso!')
+}
+
+
+// Pegar data do ano atual
+
+let dataAtual = new Date ()
+let anoAtual = dataAtual.getFullYear()
+
+document.getElementById('anoAtual').innerHTML = anoAtual
+
